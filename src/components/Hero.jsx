@@ -337,7 +337,7 @@ export default function Hero() {
           >
 
             <Avatar
-              src="/img/Personal4x4.jpg"
+              src="img/Personal4x4.jpg"
               alt="Avatar"
             />
 
