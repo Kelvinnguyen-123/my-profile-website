@@ -339,6 +339,9 @@ export default function Hero() {
             <Avatar
               src="/img/Personal4x4.jpg"
               alt="Avatar"
+              onEdit={() => {
+                alert('Chức năng thay đổi Avatar')
+              }}
             />
 
           </div>

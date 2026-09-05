@@ -6852,3 +6852,327 @@ html {
       transparent
     );
 }
+
+.avatar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-edit-button {
+  margin-top: 12px;
+  padding: 7px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.avatar-edit-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   AVATAR CAMERA OVERLAY
+===================================================== */
+
+.avatar-edit-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: inherit;
+
+  background: rgba(5, 2, 10, 0.28);
+  backdrop-filter: blur(2px);
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+
+  pointer-events: none;
+}
+
+.avatar-edit-active:hover .avatar-edit-overlay {
+  opacity: 1;
+}
+
+
+/* =====================================================
+   CAMERA BUTTON
+===================================================== */
+
+.avatar-edit-overlay span {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.14);
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  backdrop-filter: blur(10px);
+
+  color: #fff;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(155, 92, 255, 0.3);
+
+  transform: scale(0.7);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.avatar-edit-active:hover .avatar-edit-overlay span {
+  transform: scale(1);
+}
+
+
+/* =====================================================
+   CAMERA ICON
+===================================================== */
+
+.avatar-edit-overlay svg {
+  width: 21px;
+  height: 21px;
+
+  display: block;
+
+  color: #fff;
+
+  filter: drop-shadow(
+    0 2px 5px rgba(0, 0, 0, 0.5)
+  );
+}
+
+
+/* =====================================================
+   CAMERA BUTTON HOVER
+===================================================== */
+
+.avatar-edit-overlay span:hover {
+  background: rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.45),
+    0 0 28px rgba(155, 92, 255, 0.55);
+}
+/* =====================================================
+   AVATAR WRAPPER
+===================================================== */
+
+.avatar-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =====================================================
+   AVATAR FRAME
+===================================================== */
+
+.avatar-frame {
+  position: relative;
+}
+
+
+/* =====================================================
+   AVATAR EDIT MODE
+===================================================== */
+
+.avatar-edit-active {
+  cursor: pointer;
+}
+
+.avatar-edit-active .avatar-inner {
+  border: 2px solid rgba(255, 255, 255, .45);
+
+  box-shadow:
+    0 0 0 3px rgba(155, 92, 255, .08),
+    0 0 24px rgba(155, 92, 255, .22);
+
+  transition:
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.avatar-edit-active:hover .avatar-inner {
+  border-color: rgba(255, 255, 255, .6);
+
+  box-shadow:
+    0 0 0 3px rgba(155, 92, 255, .12),
+    0 0 28px rgba(155, 92, 255, .3);
+}
+
+
+/* =====================================================
+   CAMERA OVERLAY
+   HÌNH VUÔNG KHỚP TOÀN BỘ AVATAR
+===================================================== */
+
+.avatar-edit-overlay {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Không bo tròn */
+  border-radius: 0;
+
+  background: rgba(0, 0, 0, .28);
+
+  color: #fff;
+
+  opacity: 0;
+
+  transition: opacity .22s ease;
+
+  pointer-events: none;
+}
+
+.avatar-edit-active:hover .avatar-edit-overlay {
+  opacity: 1;
+}
+
+
+/* =====================================================
+   CAMERA ICON
+===================================================== */
+
+.avatar-edit-overlay svg {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+
+  color: #fff;
+
+  filter:
+    drop-shadow(0 2px 6px rgba(0, 0, 0, .7));
+
+  transition:
+    transform .22s ease,
+    opacity .22s ease;
+}
+
+.avatar-edit-active:hover .avatar-edit-overlay svg {
+  transform: scale(1.08);
+}
+
+
+/* =====================================================
+   EDIT BUTTON
+===================================================== */
+
+.avatar-edit-button {
+  margin-top: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 7px 13px;
+
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, .05);
+
+  color: #cbd5e1;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.avatar-edit-button svg {
+  width: 13px;
+  height: 13px;
+}
+
+.avatar-edit-button:hover {
+  background: rgba(255, 255, 255, .12);
+
+  border-color: rgba(255, 255, 255, .25);
+
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   AVATAR UPLOAD PREVIEW
+===================================================== */
+
+.avatar-upload-preview {
+  width: 180px;
+  height: 180px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, .12);
+
+  background: rgba(255, 255, 255, .03);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, .4),
+    0 0 30px rgba(155, 92, 255, .15);
+}
+
+.avatar-upload-preview img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
